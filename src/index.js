@@ -5,9 +5,10 @@ const { SERVER_PORT } = require("./config/index");
 const router = require('./routes/v1/index');
 
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-
-app.use('/v1', router);
+app.use('/api', router);
 
 
 app.listen(SERVER_PORT, () => {
